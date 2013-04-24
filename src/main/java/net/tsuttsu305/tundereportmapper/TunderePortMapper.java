@@ -67,7 +67,7 @@ public class TunderePortMapper extends JavaPlugin{
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("port")){
-            if (args.length != 2){
+            if (args.length != 1){
                 sender.sendMessage(ChatColor.RED + command.getUsage());
                 return true;
             }
@@ -92,6 +92,7 @@ public class TunderePortMapper extends JavaPlugin{
                             return true;
                         }
                         mapper.closeTCP();
+                        mapper = null;
                         
                         player.sendMessage(ChatColor.GREEN + "Port close. SUCCESS");
                         return true;
@@ -118,6 +119,7 @@ public class TunderePortMapper extends JavaPlugin{
                         return true;
                     }
                     mapper.closeTCP();
+                    mapper = null;
                     
                     sender.sendMessage(ChatColor.GREEN + "Port close. SUCCESS");
                     return true;
