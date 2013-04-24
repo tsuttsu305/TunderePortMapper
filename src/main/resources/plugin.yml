@@ -1,0 +1,9 @@
+name: TunderePortMapper
+main: net.tsuttsu305.tundereportmapper.TunderePortMapper
+version: 0.0.1
+author: tsuttsu305
+commands:
+  port:
+    description: PortCommand
+    permission: port.admin
+    usage: /port <open | close>

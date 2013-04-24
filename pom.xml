@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.tsuttsu305</groupId>
+  <artifactId>TunderePortMapper</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <!-- Properties -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <!-- License -->
+  <licenses>
+    <license>
+      <name>Minecraft Anti Onlinemode=False License</name>
+      <url>http://tsuttsu305.daiwa-hotcom.com/wordpress/%E4%BB%8A%E5%BE%8C%E5%85%AC%E9%96%8B%E3%81%99%E3%82%8Bplugin%E3%81%A8%E3%81%8B%E3%81%AB%E9%81%A9%E7%94%A8%E3%81%97%E3%82%88%E3%81%86%E3%81%A8%E6%80%9D%E3%81%86%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3/</url>
+    </license>
+  </licenses>
+
+  <!-- developer -->
+  <developers>
+    <developer>
+      <id>tsuttsu305</id>
+      <name>tsuttsu305</name>
+      <email>tundere@tsuttsu305.net</email>
+      <url>https://twitter.com/tsuttsu305</url>
+      <timezone>+9</timezone>
+    </developer>
+  </developers>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source />
+          <target />
+        </configuration>
+      </plugin>
+
+      <!-- shade -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <artifactSet>
+                <excludes>
+                  <exclude>classworlds:classworlds</exclude>
+                  <exclude>junit:junit</exclude>
+                  <exclude>jmock:*</exclude>
+                  <exclude>*:xml-apis</exclude>
+                  <exclude>org.apache.maven:lib:tests</exclude>
+                  <exclude>log4j:log4j:jar:</exclude>
+                  <exclude>*:bukkit</exclude>
+                </excludes>
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <!-- Bukkit can be found at the following repository -->
+    <repository>
+      <id>bukkit-repo</id>
+      <url>http://repo.bukkit.org/content/groups/public/</url>
+    </repository>
+
+    <repository>
+      <id>teleal-repo</id>
+      <url>http://teleal.org/m2</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!-- Dependency information -->
+    <dependency>
+      <groupId>org.bukkit</groupId>
+      <artifactId>bukkit</artifactId>
+      <!-- Bukkit API Version, change if nessesary -->
+      <version>1.5.1-R0.3-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.teleal.cling</groupId>
+      <artifactId>cling-support</artifactId>
+      <version>1.0.5</version>
+    </dependency>
+  </dependencies>
+</project>
