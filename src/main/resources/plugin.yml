@@ -7,3 +7,6 @@ commands:
     description: PortCommand
     permission: port.admin
     usage: /port <open | close>
+permissions:
+  port.admin:
+    default: OP
